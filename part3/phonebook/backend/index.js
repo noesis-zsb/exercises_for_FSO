@@ -26,8 +26,8 @@ const express = require('express')
 const morgan = require('morgan')
 
 const app = express()
-app.use(express.json())     // open express.json() firstly
 app.use(express.static('dist')) // Express to analyse /dist for rendering frontend
+app.use(express.json())     // open express.json() firstly
 
 morgan.token('body', (req, res) => {
     // when post
