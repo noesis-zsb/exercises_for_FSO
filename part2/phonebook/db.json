@@ -1,0 +1,40 @@
+{
+  "persons": [
+    {
+      "name": "Arto Hellas",
+      "number": "040-123456",
+      "id": "1"
+    },
+    {
+      "name": "Ada Lovelace",
+      "number": "39-44-5323523",
+      "id": "2"
+    },
+    {
+      "name": "Dan Abramov",
+      "number": "12-43-234345",
+      "id": "3"
+    },
+    {
+      "name": "Mary Poppendieck(revised for testing)",
+      "number": "39-23-6423122",
+      "id": "4"
+    },
+    {
+      "name": "Harry Potter",
+      "number": "123456",
+      "id": "p5MjJMo93OI"
+    },
+    {
+      "name": "111",
+      "number": "1111111111",
+      "id": "z_le_b93tvM"
+    },
+    {
+      "name": "111",
+      "number": "1111111111",
+      "id": "I0a5jZ-y3WQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
