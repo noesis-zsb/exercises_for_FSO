@@ -1,0 +1,31 @@
+GET http://localhost:3001/api/persons
+
+###
+DELETE http://localhost:3001/api/persons/3
+
+### test 3.6 & 3.5 number is missing
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{
+    "name": "newnweewn",
+    "number": ""
+}
+
+### test 3.6
+POST http://localhost:3001/api/persons/
+Content-Type: application/json
+
+{
+    "name": "Arto Hellas",
+    "number": "1313132"
+}
+
+### test 3.5 add a person
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "ZhangSan",
+    "number": "123456"
+}
