@@ -20,3 +20,9 @@ node_modules
 *.njsproj
 *.sln
 *.sw?
+
+# environment variables
+.env
+
+# private files
+.txt

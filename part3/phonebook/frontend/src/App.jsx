@@ -173,13 +173,30 @@ const App = () => {
               // 如果后端json文件里已经没这个人了，就得把前端数组里的也删掉
               //setPersons(persons.filter(p=>p.id !== isExist.id))
 
-              // error processing
+              // old error processing
+              /*
               setMessage(`Information of ${isExist.name} has already been removed from server`)
               setIsError(true)
               setTimeout(() => {
                 setMessage(null)
               }, 5000)
               setPersons(persons.filter(p=>p.id !== isExist.id))
+              */
+
+              // new error processing
+              if (error.response && error.response.status === 400){
+                // when return 400
+                setMessage(error.response.data.error)
+              }else{
+                // when return 404 or other
+                setMessage(`Information of ${isExist.name} has already been removed from server`)
+                setPersons(persons.filter(p => p.id !== isExist.id))
+              }
+
+              setIsError(true)
+              setTimeout(() => {
+                setMessage(null)
+              }, 5000)
             })
 
 
@@ -204,7 +221,14 @@ const App = () => {
       })
       .catch(error => {
         // 
-        setMessage(`Failed to add ${newName}`)
+        let errorMessage = ''
+        if (error.response && error.response.data && error.response.data.error) {
+          errorMessage = error.response.data.error
+        } else {
+          errorMessage = `Failed to add ${newName}`
+        }
+
+        setMessage(errorMessage)
         setIsError(true)
         setTimeout(() => {
         setMessage(null)
